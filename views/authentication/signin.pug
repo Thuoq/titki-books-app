@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+	h1.text-white Sign In Page
+	br
+	if errors
+		.alert.alert-danger= errors[0]
+	form(action="/auth",method="POST",class="float-left text-white")
+		h2 Do You Have Account 
+		.form-group
+			label(for='exampleInputEmail1') Email address
+
+			input#exampleInputEmail1.form-control(type='email',placeholder='Enter email',required,name="email")
+			small#emailHelp.text-white.form-text We&apos;ll never share your email with anyone else.
+		.form-group
+			label(for='exampleInputUserName') User Name
+			input#exampleInputUserName.form-control(type='text', placeholder='Enter User Name',required,name="name")
+		.form-group
+			label(for='exampleInputEmail1') Password
+			input#exampleInputPassword1.form-control(type='password', placeholder='Enter your password',required,name="password")
+		button.mr-3.btn.btn-primary(type='submit') Sign In
+		a.btn.btn-secondary(href="/auth/signup") Do You Not Have Account ? 
+	
+
+
+
+
+	

@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+	h1.d-inline-block.mb-3.text-white Check Out Page
+	
+	table.table.text-center.bg-white
+		tr
+			th.text-primary Name Book
+			th.text-primary Quantity
+			th.text-primary Delete 
+	
+		each book in books
+			tr
+				td=book.books
+				td  
+					a.btn.btn-secondary(href="/checkout/" + book.idBook + "/decrease") &#60;
+					span.mr-3.ml-3= book.quantity
+					a.btn.btn-secondary(href="/checkout/" + book.idBook +"/increase") &#62;
+				td 
+					a.btn.btn-secondary(href="/checkout/" + book.idBook + "/delete") X
+
+	a.btn.btn-primary.float-right(href="/checkout/rent") Rent Now!

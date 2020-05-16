@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+	form(action="/books/"+book[0].idBook+"/edit",method="POST")
+		input(type="text",name="edit",placeholder="Type Edit Title")
+		button Edit Your Title

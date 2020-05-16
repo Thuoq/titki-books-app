@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+	h1.text-center.text-white Please Type Fully Information Your Books
+	div.m-auto
+		form(action="/shop/"+ user.id +"/create",class="float-left text-white",method="POST",enctype="multipart/form-data")
+			div(class="form-group")
+					label(for="nickname3") Books Name
+					input(type="text",class="form-control",id="nickname3",name="books")
+			div(class="form-group")
+					label(for="exampleInputEmail3") Books Title
+					input( type="text",class="form-control",name="title")
+			div(class="form-group")
+					label(for="nickname3") Book Detail
+					input(type="text",class="form-control",id="nickname3",name="detail")
+			.form-group
+					label(for="exampleFormControlFile1") Upload Photo Book
+					input(id="exampleFormControlFile1",type="file",class="form-control-file",name="image",required)
+			button.mr-3.btn.btn-primary(type='submit') Post Your Book

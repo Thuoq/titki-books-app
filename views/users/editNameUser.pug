@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+	form(action="/users/"+ users[0].idUser+"/edit",method="POST" class="form-inline")
+		input(type="text",name="edit",placeholder="Type Edit Title",class="mr-3")
+		button(class="btn btn-primary") Edit Your Title

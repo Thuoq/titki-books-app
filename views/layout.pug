@@ -1,0 +1,44 @@
+html(lang="en")
+	head
+		link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+		meta(name="viewport",content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		link( rel="icon",href="/favicon-32x32.png",type="image/png")
+		link(rel="stylesheet",href="/style.css")
+	body
+		nav(class="navbar navbar-expand-lg navbar-dark font-weight-bold text-white")
+			a(class="navbar-brand nav-item nav-link active",href="/") CowNut
+			button(class="navbar-toggler",type="button",data-toggle="collapse", data-target="#navbarNavAltMarkup",aria-controls="navbarNavAltMarkup" aria-expanded="false",aria-label="Toggle navigation")
+				span(class="navbar-toggler-icon")
+			div(class="collapse navbar-collapse" id="navbarText")
+				ul.navbar-nav.mr-auto
+					li.nav-item
+						a(href="/trancation",class="nav-link text-white") Trancation
+					li.nav-item
+						a(href="/books",class="nav-link text-white") Books
+					li.nav-item
+						a(href="/users",class="nav-item nav-link text-white") Users
+		
+				if user
+					div.mr-5.d-flex.align-items-center.justify-content-between
+						img(src=srcImg,width="35",height="35",class="rounded-circle mr-3")
+						div(class="nav-item dropdown")
+							button.nav-link.btn.text-capitalize.btn-secondary.dropdown-toggle(type="button",id="dropdownMenu2",data-toggle="dropdown",aria-haspopup="true",aria-expanded="false")= user.name
+							div.dropdown-menu.nav-item(aria-labelledby="dropdownMenu2")
+								a(href="/profile",class="dropdown-item") Edit Your Profile
+								a(href="/shop/" + user.id,class="dropdown-item") Your Shop 
+								a(href="/auth/signout",class="dropdown-item") Logout
+				.navbar-text.position-relative.mr-5
+					a.nav-link.nav-item(href="/checkout")
+						svg.nav-item(style="width:2rem;height:2rem;fill:#fff;cursor: pointer;")
+							use(xlink:href="../asset-icon/sprite.svg#shopping-cart")
+						span.small.position-absolute.p-1.rounded-circle.text-dark.bg-white(style="top:0%")= number ? number : 0
+						
+		
+		div(class="container bg-gradient-secondary")
+			block content 
+			
+
+		script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js",integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n",crossorigin="anonymous")
+		script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo",crossorigin="anonymous")
+		script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6",crossorigin="anonymous")
+		

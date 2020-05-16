@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+	h2 Please Type Book And Description
+	  
+	form(action="/books/create",method="POST")
+		input(type="text",name="title",placeholder="Type title a book")
+		br
+		span &nbsp;
+		br
+		input(type="text",name="detail",placeholder="Type description a book")
+		br
+		span &nbsp;
+		br
+		button Add Books

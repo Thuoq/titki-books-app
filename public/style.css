@@ -1,0 +1,51 @@
+body{
+	background-image: url("./image/bg-tiki-1.jpg");
+	background-size: cover;
+}
+.container{
+	background-size: cover;
+}
+.card{
+	box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.25);
+	transition: all 0.2s ease-in-out;
+	background-color: #ccc;
+}
+.card-body{
+	text-shadow: 0 4rem 2.5rem rgba(0,0,0,0.25); 
+}
+.card:hover{
+	transform: scale(1.05);  
+}
+.heading {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+ .er {
+	color: red;
+	font-size: 3.5rem;
+	font-weight: 600;
+	position: absolute;
+	left: 50%;
+	top: 20%;
+	transform: translate(-50%,-50%);
+}
+.heading h1 {
+	color: white;
+	font-size: 3.5rem;
+	font-weight: 600;
+	margin-bottom: 3rem;
+}
+.heading a {
+	font-size: 2rem;
+	font-weight: 600;
+	padding: 0.5rem 2.5rem;
+}
+img {
+	overflow: hidden;
+}
+.error{
+	background-image: url("./image/error.jpg");
+	background-size: cover;
+}

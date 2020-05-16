@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+	h1.text-white Your Profile 
+	if sucess
+		div(class="alert alert-dark text-dark",role="alert")= "Your infor had changed"
+	div(class="d-flex text-white justify-content-around align-items-center")
+		div
+			img(class="rounded-circle",width=250,height=250,alt="YOUR PROFILE", src= inFormationUser ? inFormationUser.avatarUrl : undefined)
+		form(action="/profile",class="float-left text-white",method="POST",enctype="multipart/form-data")
+			div(class="form-group")
+				label(for="exampleInputEmail3") Your Email address
+				input( type="email",class="form-control",value= inFormationUser ? inFormationUser.email : '',name="email")
+			div(class="form-group")
+				label(for="nickname3") Your Nick name
+				input(type="text",class="form-control",id="nickname3",value=inFormationUser ? inFormationUser.name : '',name="name")
+			.form-group
+				label(for="exampleFormControlFile1") Edit Your Avatar
+				input(id="exampleFormControlFile1",type="file",class="form-control-file",name="avatar")
+			button.mr-3.btn.btn-primary(type='submit') Edit Your Profile
+ 
+  
+	
